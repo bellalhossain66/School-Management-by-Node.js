@@ -1,0 +1,60 @@
+<%- include('header.ejs') %>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Course Enroll</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/student">Home</a></li>
+                            <li class="breadcrumb-item active">Course Enroll</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title">Enroll Action</h3>
+                            </div>
+                            <div class="card-body">
+                                <form action="javascript:void(0)" method="post">
+                                    <div class="text-center h6 mb-3 notice" style="display: none;">
+                                        <span class="notice-text">Loading...</span>
+                                    </div>
+                                    <label>UserId:</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control userid" value="<%- userId %>" readonly>
+                                    </div>
+                                    <label>Course:</label>
+                                    <div class="input-group mb-3 course-field">
+                                        <select class="form-control courseId" id="course-title-fetch">
+                                            <option disabled="disabled" selected="true">Select course</option>
+                                        </select>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <button type="submit" class="btn btn-success btn-block" id="create-course-enroll">Add Course Enroll</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="card card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title">Enroll List</h3>
+                            </div>
+                            <div class="card-body course-enroll-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <%- include('footer.ejs') %>

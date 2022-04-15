@@ -1,0 +1,281 @@
+//Admin Section-**********************************************************************
+//Admin login api
+POST http://localhost:5001/api/admin/login
+Content-Type: application/json
+
+{
+    "email": "bellalhoss66@gmail.com",
+    "password": "1234"
+}
+
+###
+
+//all student data fetch api
+GET http://localhost:5001/api/admin/all-student
+Content-Type: application/json
+
+###
+
+//all teacher data fetch api
+GET http://localhost:5001/api/admin/all-teacher
+Content-Type: application/json
+
+###
+
+//Ban studen api
+PATCH http://localhost:5001/api/admin/ban-student
+Content-Type: application/json
+
+{
+    "id": "1"
+}
+
+###
+
+//Ban teacher api
+PATCH http://localhost:5001/api/admin/ban-teacher
+Content-Type: application/json
+
+{
+    "id": "1"
+}
+
+###
+
+//Permit studen api
+PATCH http://localhost:5001/api/admin/permit-student
+Content-Type: application/json
+
+{
+    "id": "1"
+}
+
+###
+
+//Permit teacher api
+PATCH http://localhost:5001/api/admin/permit-teacher
+Content-Type: application/json
+
+{
+    "id": "1"
+}
+
+###
+
+//delete student api
+DELETE http://localhost:5001/api/admin/student-delete
+Content-Type: application/json
+
+{
+    "id": "3"
+}
+
+###
+
+//delete teacher api
+DELETE http://localhost:5001/api/admin/teacher-delete
+Content-Type: application/json
+
+{
+    "id": "3"
+}
+
+###
+
+//Student section-********************************************************************
+//Student registration api
+POST http://localhost:5001/api/student/registration
+Content-Type: application/json
+
+{
+    "first_name": "test5",
+    "last_name": "test5",
+    "email": "test5@gmail.com",
+    "password": "1234",
+    "class": "10"
+}
+
+###
+
+//student login api
+POST http://localhost:5001/api/student/login
+Content-Type: application/json
+
+{
+    "email": "bellalhoss66@gmail.com",
+    "password": "1234"
+}
+
+###
+
+//student profile view api
+GET http://localhost:5001/api/student/profile/bellalhoss66
+Content-Type: application/json
+
+###
+
+//student profile update api
+PATCH http://localhost:5001/api/student/profile-update
+Content-Type: application/json
+
+{
+    "first_name": "test2",
+    "last_name": "test2",
+    "class": "11",
+    "userId": "test2"
+}
+
+###
+
+//student course view api
+GET http://localhost:5001/api/student/course-fetch
+Content-Type: application/json
+
+###
+
+//student course enroll api
+POST http://localhost:5001/api/student/course-enroll
+Content-Type: application/json
+
+{
+    "studentId": "bellalhoss66",
+    "courseId": "1"
+}
+
+###
+
+//student course enrolled list api
+GET http://localhost:5001/api/student/enrolled-list/bellalhoss66
+Content-Type: application/json
+
+###
+
+//Student course title from id api
+GET http://localhost:5001/api/student/course-title-from-id/1
+Content-Type: application/json
+
+###
+
+//Teacher section-*********************************************************************
+//teacher registration api
+POST http://localhost:5001/api/teacher/registration
+Content-Type: application/json
+
+{
+    "first_name": "test",
+    "last_name": "test",
+    "email": "test@gmail.com",
+    "password": "1234"
+}
+
+###
+
+//teacher login api
+POST http://localhost:5001/api/teacher/login
+Content-Type: application/json
+
+{
+    "email": "bellalhoss66@gmail.com",
+    "password": "1234"
+}
+
+###
+
+//teacher profile view api
+GET http://localhost:5001/api/teacher/profile/bellalhoss66
+Content-Type: application/json
+
+###
+
+//teacher profile update api
+PATCH http://localhost:5001/api/teacher/profile-update
+Content-Type: application/json
+
+{
+    "first_name": "test20",
+    "last_name": "test20",
+    "userId": "test"
+}
+
+###
+
+//teacher password update api
+PATCH http://localhost:5001/api/teacher/password-update
+Content-Type: application/json
+
+{
+    "password": "123",
+    "con_password": "123",
+    "old_password": "test",
+    "userId": "2"
+}
+
+###
+
+//teacher create course api
+POST http://localhost:5001/api/teacher/create-course
+Content-Type: application/json
+
+{
+    "title": "bangla",
+    "class": "10",
+    "teacherId": "bellalhoss66"
+}
+
+###
+
+//teacher view course api
+GET http://localhost:5001/api/teacher/course/bellalhoss66
+Content-Type: application/json
+
+###
+
+//teacher mcq question create api
+POST http://localhost:5001/api/teacher/question-create
+Content-Type: application/json
+
+{
+    "title": "In what year was bangladesh got independent?",
+    "courseId": "1",
+    "teacherId": "bellalhoss66"
+}
+
+###
+
+//teacher mcq question option create api
+POST http://localhost:5001/api/teacher/que-option-create
+Content-Type: application/json
+
+{
+    "sub_title": "1974",
+    "ques_Id": "4",
+    "correct": "0"
+}
+
+###
+
+//mcq only question view api
+GET http://localhost:5001/api/teacher/only-question/1
+Content-Type: application/json
+
+###
+
+//mcq only question option view api
+GET http://localhost:5001/api/teacher/only-question-option/1
+Content-Type: application/json
+
+###
+
+//mcq question & option view api
+GET http://localhost:5001/api/teacher/question-view
+Content-Type: application/json
+
+{
+    "courseId": "1"
+}
+
+###
+
+//class name fetch api
+GET http://localhost:5001/api/teacher/class-names
+Content-Type: application/json

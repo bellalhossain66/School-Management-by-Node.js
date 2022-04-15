@@ -1,0 +1,55 @@
+<%- include('header.ejs') %>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Profile Update</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/teacher">Home</a></li>
+                            <li class="breadcrumb-item active">Profile Update</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="card card-outline">
+                            <div class="card-body box-profile">
+                                <form action="javascript:void(0)" method="post">
+                                    <div class="text-center h6 mb-3 notice" style="display: none;">
+                                        <span class="notice-text">Loading...</span>
+                                    </div>
+                                    <label>UserId:</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control userid" value="<%- userId %>" readonly>
+                                    </div>
+                                    <label>First Name:</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control first-name" placeholder="First Name" required>
+                                    </div>
+                                    <label>Last Name:</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control last-name" placeholder="Last Name" required>
+                                    </div>
+                                    <label>Email:</label>
+                                    <div class="input-group mb-3">
+                                        <input type="email" class="form-control email" placeholder="Email" readonly>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <button type="submit" class="btn btn-success btn-block" id="profile-update">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <%- include('footer.ejs') %>
