@@ -32,7 +32,8 @@
         <aside class="main-sidebar sidebar-light-primary ">
             <a href="/teacher" class="brand-link">
                 <div class="text-center">
-                    <span class="font-weight-bold"><%- first_name+last_name %></span>
+                    <img src="./img/labtech.png" alt="Lab Technico" class="brand-image img-circle elevation-3" style="opacity: .8">
+                    <span class="brand-text font-weight-bold">Lab Technico</span>
                 </div>
             </a>
             <nav class="mt-2 ml-1">
@@ -41,6 +42,13 @@
                         <a href="/teacher" class="nav-link active">
                             <i class="fas fa-tachometer-alt nav-icon"></i>
                             <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/notice-board" class="nav-link">
+                            <i class="fas fa-bell"></i>
+                            <p> Notice Board
+                            </p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -73,38 +81,72 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-book"></i>
-                            <p> Course
+                            <i class="fas fa-users"></i>
+                            <p> User
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/create-course" class="nav-link active">
+                                <a href="/users" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Create Course</p>
+                                    <p>All User</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/course" class="nav-link">
+                                <a href="/user-deleted" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>View Course</p>
+                                    <p>Deleted User</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/subjective" class="nav-link">
+                            <i class="fas fa-book"></i>
+                            <p> Subjective
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/mcq-question" class="nav-link">
                             <i class="fas fa-question"></i>
                             <p> MCQ Question
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/question-bank" class="nav-link">
+                            <i class="fas fa-list-ol"></i>
+                            <p> Question Bank
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/preparation-exam" class="nav-link">
+                            <i class="fas fa-book-open"></i>
+                            <p> Preparation Exam
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <p> User Packages
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/create-question" class="nav-link active">
+                                <a href="/user-packages" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Create Question</p>
+                                    <p>User Packages</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/package-payment" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Package Payment</p>
                                 </a>
                             </li>
                         </ul>

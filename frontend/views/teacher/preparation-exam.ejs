@@ -1,0 +1,171 @@
+<%- include('header.ejs') %>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Preparation Exam List</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/teacher">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Preparation Exam List</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="">
+                            <div class="card-header">
+                                <h3 class="card-title">Category</h3>
+                                <div class="card-tools">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control category-search" placeholder="Search">
+                                        <span class="btn btn-outline-success add-category rounded-0"><i class="fas fa-plus"></i> Add </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card add-category-box d-none">
+                                    <div class="card-body">
+                                        <div class="col-lg-12">
+                                            <form action="javascript:void(0)">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control category-name" placeholder="Category Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Start Date</label>
+                                                            <input type="date" class="form-control start-date" placeholder="Start Date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>End Date</label>
+                                                            <input type="date" class="form-control end-date" placeholder="End Date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="form-group float-right col-4">
+                                                            <input type="submit" class="form-control bg-info" id="add-category-submit">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="card ml-2">
+                                        <span class="btn btn-info category-date" date="all">All</span>
+                                    </div>
+                                    <div class="card ml-2">
+                                        <span class="btn btn-outline-info category-date" date="running">Running</span>
+                                    </div>
+                                    <div class="card ml-2">
+                                        <span class="btn btn-outline-info category-date" date="upcoming">Upcoming</span>
+                                    </div>
+                                    <div class="card ml-2">
+                                        <span class="btn btn-outline-info category-date" date="archived">Archived</span>
+                                    </div>
+                                </div>
+                                <div class="category_list">
+                                    <div class="card subject">
+                                        <div class="card-body text-center">
+                                            <span class="text-dark" style="font-size: 20px;">No Data</span><br>
+                                            <i class="text-dark fas fa-folder-open fa-lg"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="">
+                            <div class="card-header">
+                                <h3 class="card-title">Sub Category</h3><span class="category-id" category-id></span>
+                                <div class="card-tools">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control sub-category-search" placeholder="Search">
+                                        <span class="btn btn-outline-success add-sub-category rounded-0"><i class="fas fa-plus"></i> Add </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card add-sub-category-box d-none">
+                                    <div class="card-body">
+                                        <div class="col-lg-12">
+                                            <form action="javascript:void(0)">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-8 col-md-8 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" class="form-control sub-category-name" placeholder="Sub Category Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Cut Mark</label>
+                                                            <input type="number" class="form-control cut-mark" placeholder="Cut Mark">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Start Date</label>
+                                                            <input type="date" class="form-control start-date-sub" placeholder="Start Date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Exam Time</label>
+                                                            <input type="number" class="form-control exam-time" placeholder="Exam Time in minute">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="form-group float-right col-4">
+                                                            <input type="submit" class="form-control bg-info" id="add-sub-category-submit">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="card ml-2">
+                                        <span class="btn btn-info sub-category-date" date="all">All</span>
+                                    </div>
+                                    <div class="card ml-2">
+                                        <span class="btn btn-outline-info sub-category-date" date="running">Running</span>
+                                    </div>
+                                    <div class="card ml-2">
+                                        <span class="btn btn-outline-info sub-category-date" date="upcoming">Upcoming</span>
+                                    </div>
+                                    <div class="card ml-2">
+                                        <span class="btn btn-outline-info sub-category-date" date="archived">Archived</span>
+                                    </div>
+                                </div>
+                                <div class="sub_category_list">
+                                    <div class="card subject">
+                                        <div class="card-body text-center">
+                                            <span class="text-dark" style="font-size: 20px;">No Data</span><br>
+                                            <i class="text-dark fas fa-folder-open fa-lg"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <%- include('footer.ejs') %>
+        <script src="./js/teacher/preparation-exam.js"></script>

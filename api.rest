@@ -1,87 +1,3 @@
-//Admin Section-**********************************************************************
-//Admin login api
-POST http://localhost:5001/api/admin/login
-Content-Type: application/json
-
-{
-    "email": "bellalhoss66@gmail.com",
-    "password": "1234"
-}
-
-###
-
-//all student data fetch api
-GET http://localhost:5001/api/admin/all-student
-Content-Type: application/json
-
-###
-
-//all teacher data fetch api
-GET http://localhost:5001/api/admin/all-teacher
-Content-Type: application/json
-
-###
-
-//Ban studen api
-PATCH http://localhost:5001/api/admin/ban-student
-Content-Type: application/json
-
-{
-    "id": "1"
-}
-
-###
-
-//Ban teacher api
-PATCH http://localhost:5001/api/admin/ban-teacher
-Content-Type: application/json
-
-{
-    "id": "1"
-}
-
-###
-
-//Permit studen api
-PATCH http://localhost:5001/api/admin/permit-student
-Content-Type: application/json
-
-{
-    "id": "1"
-}
-
-###
-
-//Permit teacher api
-PATCH http://localhost:5001/api/admin/permit-teacher
-Content-Type: application/json
-
-{
-    "id": "1"
-}
-
-###
-
-//delete student api
-DELETE http://localhost:5001/api/admin/student-delete
-Content-Type: application/json
-
-{
-    "id": "3"
-}
-
-###
-
-//delete teacher api
-DELETE http://localhost:5001/api/admin/teacher-delete
-Content-Type: application/json
-
-{
-    "id": "3"
-}
-
-###
-
 //Student section-********************************************************************
 //Student registration api
 POST http://localhost:5001/api/student/registration
@@ -126,37 +42,8 @@ Content-Type: application/json
 }
 
 ###
-
-//student course view api
-GET http://localhost:5001/api/student/course-fetch
-Content-Type: application/json
-
-###
-
-//student course enroll api
-POST http://localhost:5001/api/student/course-enroll
-Content-Type: application/json
-
-{
-    "studentId": "bellalhoss66",
-    "courseId": "1"
-}
-
-###
-
-//student course enrolled list api
-GET http://localhost:5001/api/student/enrolled-list/bellalhoss66
-Content-Type: application/json
-
-###
-
-//Student course title from id api
-GET http://localhost:5001/api/student/course-title-from-id/1
-Content-Type: application/json
-
-###
-
-//Teacher section-*********************************************************************
+//******************************************************************************************************************************************
+//Teacher section-***************************************************************************************************************************
 //teacher registration api
 POST http://localhost:5001/api/teacher/registration
 Content-Type: application/json
@@ -171,7 +58,7 @@ Content-Type: application/json
 ###
 
 //teacher login api
-POST http://localhost:5001/api/teacher/login
+POST http://localhost:6004/api/teacher/login
 Content-Type: application/json
 
 {
@@ -182,13 +69,13 @@ Content-Type: application/json
 ###
 
 //teacher profile view api
-GET http://localhost:5001/api/teacher/profile/bellalhoss66
+GET http://localhost:6004/api/teacher/profile/bellalhoss66
 Content-Type: application/json
 
 ###
 
 //teacher profile update api
-PATCH http://localhost:5001/api/teacher/profile-update
+PATCH http://localhost:6004/api/teacher/profile-update
 Content-Type: application/json
 
 {
@@ -200,7 +87,7 @@ Content-Type: application/json
 ###
 
 //teacher password update api
-PATCH http://localhost:5001/api/teacher/password-update
+PATCH http://localhost:6004/api/teacher/password-update
 Content-Type: application/json
 
 {
@@ -211,71 +98,633 @@ Content-Type: application/json
 }
 
 ###
+//Admin section-********************************************************************
 
-//teacher create course api
-POST http://localhost:5001/api/teacher/create-course
+//Add subject
+POST http://localhost:6004/api/admin/add-subject
 Content-Type: application/json
 
 {
-    "title": "bangla",
-    "class": "10",
-    "teacherId": "bellalhoss66"
+    "title": ""
 }
 
 ###
-
-//teacher view course api
-GET http://localhost:5001/api/teacher/course/bellalhoss66
+// all subject
+GET http://localhost:6004/api/admin/all-subject
 Content-Type: application/json
 
 ###
-
-//teacher mcq question create api
-POST http://localhost:5001/api/teacher/question-create
+//Add subject category
+POST http://localhost:6004/api/admin/add-subject-category
 Content-Type: application/json
 
 {
-    "title": "In what year was bangladesh got independent?",
-    "courseId": "1",
-    "teacherId": "bellalhoss66"
+    "subject_id": "",
+    "title": ""
 }
 
 ###
+// all subject category
+GET http://localhost:6004/api/admin/subject-category/subject-02
+Content-Type: application/json
 
-//teacher mcq question option create api
-POST http://localhost:5001/api/teacher/que-option-create
+###
+//Add subject sub category
+POST http://localhost:6004/api/admin/add-subject-sub-category
 Content-Type: application/json
 
 {
-    "sub_title": "1974",
-    "ques_Id": "4",
-    "correct": "0"
+    "category_id": "",
+    "subject_id": "",
+    "title": ""
 }
 
 ###
-
-//mcq only question view api
-GET http://localhost:5001/api/teacher/only-question/1
+// all subject sub category
+GET http://localhost:6004/api/admin/subject-sub-category/category-01
 Content-Type: application/json
 
 ###
-
-//mcq only question option view api
-GET http://localhost:5001/api/teacher/only-question-option/1
-Content-Type: application/json
-
-###
-
-//mcq question & option view api
-GET http://localhost:5001/api/teacher/question-view
+// delete subject sub category
+DELETE http://localhost:6004/api/admin/subject-sub-category-delete
 Content-Type: application/json
 
 {
-    "courseId": "1"
+    "sub_category_id": ""
 }
 
 ###
-
-//class name fetch api
-GET http://localhost:5001/api/teacher/class-names
+// delete subject category
+DELETE http://localhost:6004/api/admin/subject-category-delete
 Content-Type: application/json
+
+{
+    "category_id": ""
+}
+
+###
+// delete subject
+DELETE http://localhost:6004/api/admin/subject-delete
+Content-Type: application/json
+
+{
+    "subject_id": ""
+}
+
+###
+// all-mcq-question
+GET http://localhost:6004/api/admin/all-mcq-question/sub-category-06
+Content-Type: application/json
+
+###
+// all-mcq-question option 
+GET http://localhost:6004/api/admin/all-mcq-question-option/question-01
+Content-Type: application/json
+
+###
+// delete mcq-question-delete
+DELETE http://localhost:6004/api/admin/mcq-question-delete
+Content-Type: application/json
+
+{
+    "question": ""
+}
+
+###
+// mcq- by question 
+GET http://localhost:6004/api/admin/mcq-by-question/question-016
+Content-Type: application/json
+
+###
+//Add question bank
+POST http://localhost:6004/api/admin/add-question-bank
+Content-Type: application/json
+
+{
+    "title": ""
+}
+
+###
+// all question bank
+GET http://localhost:6004/api/admin/all-question-bank
+Content-Type: application/json
+
+###
+//Add question bank sub category
+POST http://localhost:6004/api/admin/add-question-bank-sub-category
+Content-Type: application/json
+
+{
+    "title": "",
+    "question_bank_id": ""
+}
+
+###
+// all question bank sub category
+GET http://localhost:6004/api/admin/all-question-bank-sub-category/ques-bank-cate-01
+Content-Type: application/json
+
+###
+// question-bank-sub-category-delete
+DELETE http://localhost:6004/api/admin/question-bank-sub-category-delete
+Content-Type: application/json
+
+{
+    "sub_category_id": ""
+}
+
+###
+// question-bank-category-delete
+DELETE http://localhost:6004/api/admin/question-bank-category-delete
+Content-Type: application/json
+
+{
+    "category_id": ""
+}
+
+###
+// question-bank-by-name
+GET http://localhost:6004/api/admin/question-bank-by-name/ques-bank-sub-01
+Content-Type: application/json
+
+###
+//  add-question-bank-mcq
+POST http://localhost:6004/api/admin/add-question-bank-mcq
+Content-Type: application/json
+
+{
+    "question_bank": "",
+    "question_bank_sub": "",
+    "question": ""
+}
+
+###
+// question-bank-mcq
+GET http://localhost:6004/api/admin/question-bank-mcq/ques-bank-sub-01
+Content-Type: application/json
+
+###
+// question-bank-mcq-delete
+DELETE http://localhost:6004/api/admin/question-bank-mcq-delete
+Content-Type: application/json
+
+{
+    "action_id": ""
+}
+
+###
+// subjective-question-by-name
+GET http://localhost:6004/api/admin/subjective-question-by-name/sub-category-06
+Content-Type: application/json
+
+###
+//  add-preparation-category
+POST http://localhost:6004/api/admin/add-preparation-category
+Content-Type: application/json
+
+{
+    "title": "",
+    "start_date": "",
+    "end_date": ""
+}
+
+###
+// question-bank-mcq
+GET http://localhost:6004/api/admin/all-preparation-category
+Content-Type: application/json
+
+###
+//  add-preparation-sub-category
+POST http://localhost:6004/api/admin/add-preparation-sub-category
+Content-Type: application/json
+
+{
+    "preparation_exam_id": "",
+    "title": "",
+    "cut_mark": "",
+    "start_date": "",
+    "exam_time": ""
+}
+
+###
+// question-bank-mcq
+GET http://localhost:6004/api/admin/all-preparation-sub-category/preparation-exam-011
+Content-Type: application/json
+
+###
+// preparation-sub-category-delete
+DELETE http://localhost:6004/api/admin/preparation-sub-category-delete
+Content-Type: application/json
+
+{
+    "sub_category_id": ""
+}
+
+###
+// preparation-category-delete
+DELETE http://localhost:6004/api/admin/preparation-category-delete
+Content-Type: application/json
+
+{
+    "category_id": ""
+}
+
+###
+// preparation-eaxm by name
+GET http://localhost:6004/api/admin/preparation-exam-by-name/preparation-exam-sub-014
+Content-Type: application/json
+
+###
+// preparation-exam-mcq
+GET http://localhost:6004/api/admin/preparation-exam-mcq/preparation-exam-sub-018
+Content-Type: application/json
+
+###
+//  add-preparation-exam-mcq
+POST http://localhost:6004/api/admin/add-preparation-exam-mcq
+Content-Type: application/json
+
+{
+    "preparation_exam": "",
+    "preparation_exam_sub": "",
+    "question": ""
+}
+
+###
+// preparation-exam-mcq-delete
+DELETE http://localhost:6004/api/admin/preparation-exam-mcq-delete
+Content-Type: application/json
+
+{
+    "action_id": ""
+}
+
+###
+// all users
+GET http://localhost:6004/api/admin/users
+Content-Type: application/json
+
+###
+// all users active-inactive
+Patch http://localhost:6004/api/admin/user-active-inactive
+Content-Type: application/json
+
+{
+    "userId": "",
+    "status": ""
+}
+
+###
+// all users delete
+Patch http://localhost:6004/api/admin/user-delete
+Content-Type: application/json
+
+{
+    "userId": ""
+}
+
+###
+// all users
+GET http://localhost:6004/api/admin/users-deleted
+Content-Type: application/json
+
+###
+// all users user-delete-forever
+DELETE http://localhost:6004/api/admin/user-delete-forever
+Content-Type: application/json
+
+{
+    "userId": ""
+}
+
+###
+// deleted users restore
+PATCH http://localhost:6004/api/admin/user-restore
+Content-Type: application/json
+
+{
+    "userId": ""
+}
+
+###
+// notice board
+GET http://localhost:6004/api/admin/notice-board
+Content-Type: application/json
+
+###
+// add notice board
+PATCH http://localhost:6004/api/admin/add-notice-board
+Content-Type: application/json
+
+{
+    "notice": ""
+}
+
+###
+// user package-update
+PATCH http://localhost:6004/api/admin/package-update
+Content-Type: application/json
+
+{
+    "package_id": "",
+    "package_type": "",
+    "package_price": "",
+    "package_description": "",
+    "package_status": ""
+}
+
+###
+// package-subscriber by name
+GET http://localhost:6004/api/admin/package-subscriber-by-name/package-01
+Content-Type: application/json
+
+###
+// package-subscriber
+GET http://localhost:6004/api/admin/package-subscriber/package-01
+Content-Type: application/json
+
+###
+// package-subscriber active-inactive
+Patch http://localhost:6004/api/admin/package-subscriber-active-inactive
+Content-Type: application/json
+
+{
+    "userId": "",
+    "action_id": ""
+}
+
+###
+// add-package-payment
+POST http://localhost:6004/api/admin/add-package-payment
+Content-Type: application/json
+
+{
+    "title": "",
+    "account": "",
+    "type": "",
+    "status": ""
+}
+
+###
+// all-package-payment
+GET http://localhost:6004/api/admin/all-package-payment
+Content-Type: application/json
+
+###
+// package-payment active-inactive
+Patch http://localhost:6004/api/admin/package-payment-active-inactive
+Content-Type: application/json
+
+{
+    "status": "",
+    "action_id": ""
+}
+
+###
+// package-payment delete
+DELETE http://localhost:6004/api/admin/package-payment-delete
+Content-Type: application/json
+
+{
+    "action_id": ""
+}
+
+###
+// add-new-package
+POST http://localhost:6004/api/admin/add-new-package
+Content-Type: application/json
+
+{
+    "title": "",
+    "description": "",
+    "duration": "",
+    "type": "",
+    "price": "",
+    "status": ""
+}
+
+###
+// all-packages
+GET http://localhost:6004/api/admin/all-packages
+Content-Type: application/json
+
+###
+// update-package
+PATCH http://localhost:6004/api/admin/update-package
+Content-Type: application/json
+
+{
+    "title": "",
+    "description": "",
+    "duration": "",
+    "type": "",
+    "price": "",
+    "status": "",
+    "package_id": ""
+}
+
+
+###
+// *****************************************************************************************************************************************
+//User section-*****************************************************************************************************************************
+//user login api
+POST http://localhost:6004/api/user/login
+Content-Type: application/json
+
+{
+    "email": "labtechnicobd@gmail.com",
+    "password": "1234"
+}
+
+###
+//user profile view api
+POST http://localhost:6004/api/user/profile
+Content-Type: application/json
+
+{
+    "userId": "labtechnicobd"
+}
+
+###
+//user question-bank
+POST http://localhost:6004/api/user/question-bank
+Content-Type: application/json
+
+###
+//user question-bank-option
+POST http://localhost:6004/api/user/question-bank-option
+Content-Type: application/json
+
+{
+    "question_bank_id": "ques-bank-cate-01"
+}
+
+###
+//user question-bank-mcq
+POST http://localhost:6004/api/user/question-bank-mcq
+Content-Type: application/json
+
+{
+    "question_bank_option_id": "ques-bank-sub-01"
+}
+
+###
+//user subjective
+POST http://localhost:6004/api/user/subjective
+Content-Type: application/json
+
+###
+//user subjective-category
+POST http://localhost:6004/api/user/subjective-category
+Content-Type: application/json
+
+{
+    "subjective_id": "subject-01"
+}
+
+###
+//user subjective-sub category
+POST http://localhost:6004/api/user/subjective-sub-category
+Content-Type: application/json
+
+{
+    "subjective_category_id": "category-01"
+}
+
+###
+//user subjective-mcq
+POST http://localhost:6004/api/user/subjective-mcq
+Content-Type: application/json
+
+{
+    "subjective_sub_category_id": "sub-category-06"
+}
+
+###
+//user examination
+POST http://localhost:6004/api/user/examination
+Content-Type: application/json
+
+###
+//user examination-option
+POST http://localhost:6004/api/user/examination-option
+Content-Type: application/json
+
+{
+    "examination_id": "preparation-exam-020",
+    "status": "archive",
+    "userId": "labtechnicobd"
+}
+
+###
+//user examination-mcq
+POST http://localhost:6004/api/user/examination-mcq
+Content-Type: application/json
+
+{
+    "examination_option_id": "preparation-exam-sub-018"
+}
+
+###
+//user password update api
+POST http://localhost:6004/api/user/update-password
+Content-Type: application/json
+
+{
+    "userId": "labtechnicobd",
+    "old_password": "12345",
+    "new_password": "1234",
+    "confirm_password": "1234"
+}
+
+###
+//user registration api
+POST http://localhost:6004/api/user/signup
+Content-Type: application/json
+
+{
+    "name": "test",
+    "phone": "01711223344",
+    "email": "test@gmail.com",
+    "password": "1234",
+    "confirm_password": "1234"
+}
+
+###
+//user profile update api
+POST http://localhost:6004/api/user/profile-update
+Content-Type: application/json
+
+{
+    "name": "test11111",
+    "userId": "test"
+}
+
+###
+//personal-practice-answer-submit
+POST http://localhost:6004/api/user/personal-practice-answer-submit
+Content-Type: application/json
+
+{
+    "userId": "labtechnicobd",
+    "question_id": "2345234",
+    "question_title": "Vocabulary",
+    "total_mcq": "50",
+    "total_mcq_marked": "35",
+    "total_right": "25",
+    "total_wrong": "10",
+    "total_marks": "20"
+}
+
+###
+//personal-practice-answer-sheet
+POST http://localhost:6004/api/user/personal-practice-answer-sheet
+Content-Type: application/json
+
+{
+    "userId": "labtechnicobd"
+}
+
+###
+//preparation-practice-answer-submit
+POST http://localhost:6004/api/user/preparation-exam-answer-submit
+Content-Type: application/json
+
+{
+    "userId": "labtechnicobd",
+    "question_id": "4564567",
+    "question_title": "Article",
+    "total_mcq": "50",
+    "total_mcq_marked": "35",
+    "total_right": "25",
+    "total_wrong": "10",
+    "total_marks": "20"
+}
+
+###
+//preparation-practice-answer-sheet
+POST http://localhost:6004/api/user/preparation-exam-answer-sheet
+Content-Type: application/json
+
+{
+    "userId": "labtechnicobd"
+}
+
+###
+//preparation-practice-answer-sheet
+POST http://localhost:6004/api/user/preparation-option-answer-sheet
+Content-Type: application/json
+
+{
+    "userId": "labtechnicobd",
+    "examination_option_id": "preparation-exam-sub-035"
+}
+
+###
+// packages list
+POST http://localhost:6004/api/user/packages
+Content-Type: application/json
+
+{
+    "userId": "labtechnicobd"
+}

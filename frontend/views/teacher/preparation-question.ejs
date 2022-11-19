@@ -1,0 +1,107 @@
+<%- include('header.ejs') %>
+    <style>
+        .subject,
+        .category,
+        .sub-category,
+        .question-option-delete {
+            cursor: pointer;
+        }
+        
+        .mcq-list-box .mcq_list,
+        .question-bank-mcq-list-box .question-bank-mcq-list {
+            height: 100%;
+            max-height: 900px;
+            overflow: auto;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 2px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: green;
+        }
+    </style>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">MCQ Question</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/teacher">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/preparation-exam">Preparation Exam</a></li>
+                            <li class="breadcrumb-item name1"></li>
+                            <li class="breadcrumb-item name2"></li>
+                            <li class="breadcrumb-item active">MCQ Question</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-12 add-mcq-in-box d-none">
+                        <div class="card">
+                            <div class="card-body">
+                                <form action="javascript:void(0)" class="question-box">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-lg form-control-border border-width-2 bg-light question-title" placeholder="Untitled Question">
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-transparent border-0"><input type="radio" class="question-option-status" value="0"></span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-border question-option-title" placeholder="Option 1">
+                                    </div>
+                                </form>
+                                <form action="javascript:void(0)">
+                                    <div class="input-group mt-3">
+                                        <div class="input-group-prepend">
+                                            <i class="far fa-circle input-group-text bg-transparent border-0"></i>
+                                        </div>
+                                        <span class="form-control form-control-border text-secondary add-question-option" option="1">Add Option</span>
+                                    </div>
+                                    <div class="mt-3">
+                                        <span class="btn btn-xs btn-outline-dark add-description">Add description</span>
+                                        <div class="form-group mt-1 add-description-box d-none">
+                                            <textarea class="form-control question-description" rows="4" placeholder="Add answer feedback.."></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="question-option-submit-box mb-4" style="text-align: center;">
+                                <span class="btn btn-info add-question-option-submit">Submit Question</span>
+                                <span class="btn btn-info edit-question-option-submit d-none">Submit Question</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 view-question-bank-box">
+                        <div class="card card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title">Total mcq question: <span class="text-bold text-green h3 total-mcq"></span>
+                                </h3>
+                                <div class="card-tools">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control view-mcq-search" placeholder="Search">
+                                        <span class="btn btn-success rounded-0 add-mcq-question"><i class="fas fa-plus"></i> Add MCQ Question</span>
+                                        <span class="btn btn-outline-success full-screen d-none" title="Full Screen"><i class="fas fa-expand fa-lg"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body question-bank-mcq-list-box">
+                                    <div class="row question-bank-mcq-list"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <%- include('footer.ejs') %>
+        <script src="./js/teacher/preparation-exam-question.js"></script>

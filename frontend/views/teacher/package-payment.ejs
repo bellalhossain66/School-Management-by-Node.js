@@ -1,0 +1,90 @@
+<%- include('header.ejs') %>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Package Payment</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/teacher">Home</a></li>
+                            <li class="breadcrumb-item active">Package Payment</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Add Payment</h3>
+                            </div>
+                            <div class="card-body">
+                                <form action="javascript:void(0)">
+                                    <div class="form-group">
+                                        <label>Payment Type</label>
+                                        <select class="form-control title">
+                                        <option value="bkash">Bkash</option>
+                                        <option value="nagad">Nagad</option>
+                                        <option value="rocket">Rocket</option>
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Account Type</label>
+                                        <select class="form-control type">
+                                        <option value="personal">Personal</option>
+                                        <option value="agent">Agent</option>
+                                    </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Account No</label>
+                                        <input type="number" class="form-control account" placeholder="Account number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <select class="form-control status">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                    </select>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <span class="form-control btn btn-outline-info col-4 add-payment">Submit</span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Payment List</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Sn</th>
+                                                <th>Name</th>
+                                                <th>Acoount No</th>
+                                                <th>Type</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="payment_list"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <%- include('footer.ejs') %>
+        <script src="./js/teacher/package-payment.js"></script>

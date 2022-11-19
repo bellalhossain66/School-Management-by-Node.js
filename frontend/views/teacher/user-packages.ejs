@@ -1,0 +1,154 @@
+<%- include('header.ejs') %>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">User Packages</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/teacher">Dashboard</a></li>
+                            <li class="breadcrumb-item active">User Packages</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="">
+                            <div class="card-header">
+                                <h3 class="card-title">Packages</h3>
+                                <div class="card-tools">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control category-search" placeholder="Search">
+                                        <span class="btn btn-outline-success rounded-0" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Add </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Add New Package</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="javascript:void(0)">
+                                                    <div class="form-group">
+                                                        <label>Package Title</label>
+                                                        <input type="text" class="form-control package-title" placeholder="Package Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Description</label>
+                                                        <textarea rows="3" class="form-control package-description" placeholder="Description"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Duration Day</label>
+                                                        <input type="number" class="form-control package-duration" placeholder="Package time by day">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Type</label>
+                                                        <select class="form-control package-type">
+                                                            <option value="paid">Paid</option>
+                                                            <option value="free">Free</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="package-others">
+                                                        <div class="form-group">
+                                                            <label>Price (৳)</label>
+                                                            <input type="number" class="form-control package-price" value="0">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Status</label>
+                                                        <select class="form-control package-status">
+                                                            <option value="0">Active</option>
+                                                            <option value="1">Inactive</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-info package-add-submit">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="exampleModal_update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Package update</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="javascript:void(0)">
+                                                    <div class="form-group">
+                                                        <label>Package Title</label>
+                                                        <input type="hidden" class="form-control package-id">
+                                                        <input type="text" class="form-control package-title2" placeholder="Package Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Description</label>
+                                                        <textarea rows="3" class="form-control package-description2" placeholder="Description"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Duration Day</label>
+                                                        <input type="number" class="form-control package-duration2" placeholder="Package time by day">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Type</label>
+                                                        <select class="form-control package-type2">
+                                                            <option value="paid">Paid</option>
+                                                            <option value="free">Free</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="package-others">
+                                                        <div class="form-group">
+                                                            <label>Price (৳)</label>
+                                                            <input type="number" class="form-control package-price2" value="0">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Status</label>
+                                                        <select class="form-control package-status2">
+                                                            <option value="0">Active</option>
+                                                            <option value="1">Inactive</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-info package-update-submit">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="packages_list">
+                                    <div class="card subject">
+                                        <div class="card-body text-center">
+                                            <span class="text-dark" style="font-size: 20px;">No Data</span><br>
+                                            <i class="text-dark fas fa-folder-open fa-lg"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <%- include('footer.ejs') %>
+        <script src="./js/teacher/user-packages.js"></script>

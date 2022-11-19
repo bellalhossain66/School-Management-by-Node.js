@@ -1,4 +1,26 @@
 <%- include('header.ejs') %>
+    <style>
+        .subject,
+        .category,
+        .sub-category,
+        .question-option-delete {
+            cursor: pointer;
+        }
+        
+        .mcq-list-box .mcq_list {
+            height: 100%;
+            max-height: 900px;
+            overflow: auto;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 2px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: green;
+        }
+    </style>
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -18,43 +40,86 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="card card-outline">
-                            <div class="card-header">
-                                <h3 class="card-title">MCQ Question</h3>
-                            </div>
-                            <div class="card-body">
-                                <form action="javascript:void(0)" method="post">
-                                    <div class="text-center h6 mb-3 notice" style="display: none;">
-                                        <span class="notice-text">Loading...</span>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="card">
+                            <div class="card-body subject-side-box">
+                                <div class="subject">
+                                    <p> Subject
+                                        <i class="float-right fas fa-angle-left"></i>
+                                    </p>
+                                    <div class="category-side-box ml-3 d-none border-left">
+                                        <div class="category">
+                                            <p>
+                                                <i class="fas fa-circle fa-xs mr-1"></i> Category
+                                                <i class="float-right fas fa-angle-left"></i>
+                                            </p>
+                                            <div class="sub-category-side-box ml-3 d-none">
+                                                <div class="sub-category">
+                                                    <p>
+                                                        <i class="far fa-circle fa-xs mr-1"></i> Sub Category
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <label>UserId:</label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control userid" value="<%- userId %>" readonly>
-                                    </div>
-                                    <label>Course:</label>
-                                    <div class="input-group mb-3 course-field">
-                                        <select class="form-control courseId" id="course-title-fetch">
-                                            <option disabled="disabled" selected="true">Select course</option>
-                                        </select>
-                                    </div>
-                                    <label>MCQ Question Title:</label>
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control title" placeholder="Course Title" required>
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <button type="submit" class="btn btn-success btn-block" id="create-question">Create Course</button>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-9 col-md-12">
                         <div class="card card-outline">
                             <div class="card-header">
-                                <h3 class="card-title">MCQ Option with Question</h3>
+                                <h3 class="card-title">
+                                    <span class="subject-name"></span>
+                                    <span class="category-name"></span>
+                                    <span class="sub-category-name"></span> mcq question
+                                </h3>
+                                <div class="card-tools">
+                                    <input type="search" class="form-control mcq-search" placeholder="Search">
+                                </div>
                             </div>
-                            <div class="card-body mcq-list"></div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <form action="javascript:void(0)" class="question-box">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control form-control-lg form-control-border border-width-2 bg-light question-title" placeholder="Untitled Question">
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text bg-transparent border-0"><input type="radio" class="question-option-status" value="0"></span>
+                                                        </div>
+                                                        <input type="text" class="form-control form-control-border question-option-title" placeholder="Option 1">
+                                                    </div>
+                                                </form>
+                                                <form action="javascript:void(0)">
+                                                    <div class="input-group mt-3">
+                                                        <div class="input-group-prepend">
+                                                            <i class="far fa-circle input-group-text bg-transparent border-0"></i>
+                                                        </div>
+                                                        <span class="form-control form-control-border text-secondary add-question-option" option="1">Add Option</span>
+                                                    </div>
+                                                    <div class="mt-3">
+                                                        <span class="btn btn-xs btn-outline-dark add-description">Add description</span>
+                                                        <div class="form-group mt-1 add-description-box d-none">
+                                                            <textarea class="form-control question-description" rows="4" placeholder="Add answer feedback.."></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="question-option-submit-box mb-4 d-none" style="text-align: center;">
+                                                <span class="btn btn-info add-question-option-submit">Submit Question</span>
+                                                <span class="btn btn-info edit-question-option-submit d-none">Submit Question</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mcq-list-box">
+                                        <div class="card-body mcq_list"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -62,3 +127,4 @@
         </section>
     </div>
     <%- include('footer.ejs') %>
+        <script src="./js/teacher/mcq-question.js"></script>
